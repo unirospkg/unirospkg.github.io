@@ -130,36 +130,6 @@
                 </a>
               </span> -->
 
-              <span class="link-block">
-                <a  href="./static/images/workshop_final.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://youtu.be/smXBsOTeXrE"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-
-              <span class="link-block">
-                <a href="./static/images/ICRA2025_poster_Aswin.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-powerpoint"></i>
-                  </span>
-                  <span>Poster</span>
-                </a>
-              </span>
             </div>
 
           </div>
@@ -208,12 +178,14 @@
 <section class="section is-small has-background-black has-text-light" id="task-tracking">
   <div class="container is-max-desktop">
 
-    <h2 class="title is-1 has-text-white  is-size-4-mobile">Style Tracking with Compliance</h2>
+    <h2 class="title is-1 has-text-white  is-size-4-mobile">Cross-environemnt Deployment</h2>
     <div class="content has-text-justified">
       <p>
-        Following gait styles are fancy. But following it too much can be dangerous.
-        What if we follow these gait styles but allow some room for mistake?
-        Here comes the compliant gait tracking, yielding the best of both worlds.
+        Low-level control is often safety-critical and requires a lot of engineering effort. 
+        When our policy does not work, we often spend a lot of time debugging without knowing where the issue stems from.
+        UniLeg provides a streamlined pipeline for sim-to-sim-to-real transfer in legged locomotion research without the need of preparing different inference script.
+        Our pipeline supports seamless sim-to-sim deployment in Mujoco and Gazebo, as well as sim-to-real deployment in popular commercial robots (Unitree and DeepRobotics).
+        By doing so, we can easily focus on policy design and ensuring safety through sim-to-sim validation.
       </p>
     </div>
 
@@ -300,17 +272,15 @@
 <section class="section is-small has-background-black has-text-light" id="task-tracking">
   <div class="container is-max-desktop">
 
-    <h2 class="title is-1 has-text-white  is-size-4-mobile">How Hard is it to Apply to Other Embodiments?</h2>
+    <h2 class="title is-1 has-text-white  is-size-4-mobile">Loco-manipulation</h2>
     <div class="content has-text-justified">
       <p>
-        As easy as 1, 2, 3!
-        Simply train the compliant style tracking policy and you can use the same skill database to other embodiments.
-        (Of course you can make more specific skill database too!)
+        Our modular pipeline makes it easy to even combines two different robots. With UniLeg, we are able to combine a Go2 robot with a ViperX robot arm to perform dynamic loco-manipulation.
       </p>
     </div>
 
     <video autoplay muted loop playsinline height="100%">
-      <source src="./static/videos/h1_locovlm_demo.mp4" type="video/mp4">
+      <source src="./static/videos/manipulation.mp4" type="video/mp4">
     </video>
     
 </section>
