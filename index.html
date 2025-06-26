@@ -189,31 +189,17 @@
       </p>
     </div>
 
-    <video id="myVideo" autoplay muted loop playsinline height="100%">
-      <source id="videoSource" src="./static/videos/go2_compliant_tracking.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    
-    <button onclick="nextVideo()">Next</button>
-    
-    <script>
-      const videos = [
-        "./static/videos/go2_compliant_tracking.mp4",
-        "./static/videos/go2_compliant_tracking.mp4",
-        "./static/videos/go2_compliant_tracking.mp4"
-      ];
-    
-      let currentIndex = 0;
-    
-      function nextVideo() {
-        currentIndex = (currentIndex + 1) % videos.length;
-        const video = document.getElementById("myVideo");
-        const source = document.getElementById("videoSource");
-        source.src = videos[currentIndex];
-        video.load(); // Reload the video with the new source
-        video.play(); // Optional: start playing immediately
-      }
-    </script>
+    <div style="display: flex; gap: 10px;">
+      <video autoplay muted loop playsinline width="30%">
+        <source src="./static/videos/go2_compliant_tracking.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline width="30%">
+        <source src="./static/videos/go2_compliant_tracking.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline width="30%">
+        <source src="./static/videos/go2_compliant_tracking.mp4" type="video/mp4">
+      </video>
+    </div>
     
 </section>
 
