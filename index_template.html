@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Obstacle-aware quadrupedal locomotion with resilient multi-modal reinforcement learning">
+  <meta name="keywords" content="Locomotion, reinforcement learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DreamWaQ++:Obstacle-aware quadrupedal locomotion with resilient multi-modal reinforcement learning</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Relevant Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://sites.google.com/view/dreamwaq">
+            DreamWaQ
+          </a>
+          <a class="navbar-item" href="https://sites.google.com/view/dreamriser">
+            DreamRiser
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Versatile Legged Locomotion Adaptation through Vision-Language Grounding</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://anahrendra.github.io">I Made Aswin Nahrendra</a><sup>1</sup>,
+            </span>
+
+            <span class="author-block">
+              <a href="https://urobot.kaist.ac.kr/url_teams/mr-seunghyun-lee/">Seunghyun Lee</a><sup>1</sup>,
+            </span>
+
+            <span class="author-block">
+              <a href="https://urobot.kaist.ac.kr/url_teams/mr-dongkyu-lee/">Dongkyu Lee</a><sup>1, 2</sup>,
+            </span>
+
+            <span class="author-block">
+              <a href="https://urobot.kaist.ac.kr/url_teams/prof-hyunmyung/">Hyun Myung</a><sup>1</sup>,
+            </span>
+
+            
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Urban Robotics Lab., KAIST,</span>
+            <span class="author-block"><sup>2</sup>URobotics Corp.</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="http://arxiv.org/pdf/2409.19709"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2409.19709"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/smXBsOTeXrE"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Compilation -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">Video</h2> -->
+        <div class="publication-video">
+          <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0" -->
+          <iframe src="https://www.youtube.com/embed/IeBNRQsmKR4?si=OXhyf3lII7lfsaQR"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Compilation -->
+    
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Quadrupedal robots hold promising potential for applications in navigating cluttered environments with resilience akin to their animal counterparts. However, their floating base configuration makes them vulnerable to real-world uncertainties, yielding substantial challenges in their locomotion control.
+          </p>
+          <p>
+            Deep reinforcement learning has become one of the plausible alternatives for realizing a robust locomotion controller. However, the approaches that rely solely on proprioception sacrifice collision-free locomotion because they require front-feet contact to detect the presence of stairs to adapt the locomotion gait. Meanwhile, incorporating exteroception necessitates a precisely modeled map observed by exteroceptive sensors over a period of time. 
+          </p>
+          <p>
+            Therefore, this work proposes a novel method to fuse proprioception and exteroception featuring a resilient multi-modal reinforcement learning. The proposed method yields a controller that showcases agile locomotion performance on a quadrupedal robot over a myriad of real-world courses, including rough terrains, steep slopes, and high-rise stairs, while retaining its robustness against out-of-distribution situations.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <!-- Movie S2 -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Movie S2</h2>
+          <p>
+            Stair-climbing race between DreamWaQ++, DreamWaQ, and the built-in controller.
+          </p>
+          <div class="publication-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/olQ-9czne1c?si=B-c0iD1RbISytX8G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Movie S2 -->
+
+      <!-- Movie S3 -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Movie S3</h2>
+          <p>
+            Resilient stair-climbing on various stairs with different rise and run propoerties.
+          </p>
+          <div class="publication-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Aj2mTwYs8vA?si=Z-GACjEI6__SkVav" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Movie S3 -->
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <!-- Movie S４ -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Movie S4</h2>
+          <p>
+            Emergent probing behavior on uncertain terrains.
+          </p>
+          <div class="publication-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/WgrBbcCyqtc?si=5N7I5-W9KSePvEzT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Movie S４ -->
+
+      <!-- Movie S5 -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Movie S5</h2>
+          <p>
+            Adaptation in out-of distribution situations.
+          </p>
+          <div class="publication-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/cTm4J_yHG74?si=UTANvD5O3u6ANgKz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Movie S5 -->
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <!-- Movie S6 -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Movie S6</h2>
+          <p>
+            Locomotion performance comparison on extreme slopes.
+          </p>
+          <div class="publication-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VjnD4arlX0U?si=zgspNPaSc7CBDNZ6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Movie S6 -->
+
+      <!-- Movie S7 -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Movie S7</h2>
+          <p>
+            Scalability of DreamWaQ++ on various robots.
+          </p>
+          <div class="publication-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ne-oG4orWp4?si=9myOZ9iZkFJ0Bnsa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Movie S7 -->
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <!-- Movie S8 -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Movie S8</h2>
+          <p>
+            Demonstration of DreamWaQ++ on extreme locomotion tasks such as overcoming high obstacles.
+          </p>
+          <div class="publication-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dJH389fL52Q?si=EK4xkmNCCRqkp5YQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Movie S8 -->
+
+      <!-- Movie S9 -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Movie S9</h2>
+          <p>
+            Comparison of the baseline DreamWaQ on different robot platforms.
+          </p>
+          <div class="publication-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rBNk8LY1r1g?si=IHjWNND7aafsgGg-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Movie S9 -->
+    </div>
+  </div>
+
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <!-- Movie S10 -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Movie S8=10</h2>
+          <p>
+            In-depth experiment using of Movie S2 with asynchronous race.
+          </p>
+          <div class="publication-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/AduhW4Ai2pM?si=squ4lcRROLgVtGRz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Movie S10 -->
+    </div>
+  </div>
+
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{nahrendra2024obstacle,
+      title={Obstacle-Aware Quadrupedal Locomotion With Resilient Multi-Modal Reinforcement Learning},
+      author={Nahrendra, I and Yu, Byeongho and Oh, Minho and Lee, Dongkyu and Lee, Seunghyun and Lee, Hyeonwoo and Lim, Hyungtae and Myung, Hyun},
+      journal={arXiv preprint arXiv:2409.19709},
+      year={2024}
+    }
+  </code></pre>
+    </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/anahrendra" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
