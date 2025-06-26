@@ -178,7 +178,7 @@
 <section class="section is-small has-background-black has-text-light" id="task-tracking">
   <div class="container is-max-desktop">
 
-    <h2 class="title is-1 has-text-white  is-size-4-mobile">Cross-environemnt Deployment</h2>
+    <h2 class="title is-1 has-text-white  is-size-4-mobile">Cross-environment Deployment</h2>
     <div class="content has-text-justified">
       <p>
         Low-level control is often safety-critical and requires a lot of engineering effort. 
@@ -208,27 +208,26 @@
     <div class="columns is-centered">
       <div class="column is-four-fifths">
 
-        <h2 class="title is-1 has-text-centered is-size-4-mobile">Scaling-up Instructions</h2>
+        <h2 class="title is-1 has-text-centered is-size-4-mobile">Multiple Embodiments</h2>
         <div class="content">
           <p>
-            Data collection and labeling is always expensive and tedious.
-            But what if we can ask our friendly LLM to do it for us?
+            We make it easy to deploy policies on different robots. Whether it is a quadruped robot, a wheeled quadruped, or even a humanoid robot. 
+            Unileg provides an easy interface to plug-and-play different robots.
           </p>
         </div>
 
-        <div class="content">
-          <p>
-            LocoVLM firstly constructs a skillset database that bridges language instructions with robot commands.
-            We prompted a large language model (LLM) to generate instructions, whether it is a mimicking task, scene descriptions, or even a simple direct command.
-            Then, we asked the LLM to utilize these instructions to generate the appropriate robot commands.
-            And voilà, we have a skillset database that can be used to instruct our robot.
-          </p>
-
-          <figure>
-            <img src="./static/images/skill_database.png" alt="Skill" style="width: 100%; height: auto;">
-          </figure>
-
+        <div style="display: flex; gap: 10px;">
+          <video autoplay muted loop playsinline width="30%">
+            <source src="./static/videos/go1.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline width="30%">
+            <source src="./static/videos/go2_wheel.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline width="30%">
+            <source src="./static/videos/h1_locovlm_demo.mp4" type="video/mp4">
+          </video>
         </div>
+        
       </div>
 
     </div>
